@@ -1,0 +1,94 @@
+---
+title: "DATA 606 final project"
+author: "Jun Pan"
+date: "November 8, 2018"
+output: html_document
+---
+### Data Preparation
+
+```{r setup, echo=TRUE, results='hide', warning=FALSE, message=FALSE}
+# load data
+
+```
+
+
+### Research question 
+
+**You should phrase your research question in a way that matches up with the scope of inference your dataset allows for.**
+
+Body Mass Index(BMI) and risk of cardiovascular disease; the Framingham study
+
+### Cases 
+
+**What are the cases, and how many are there?**
+The Framingham Heart Study is a long-term, ongoing cardiovascular cohort study on residents of the city of Framingham, Massachusetts. The study began in 1948 with 5,209 adult subjects from Framingham, and is now on its third generation of participants.
+
+
+### Data collection 
+
+**Describe the method of data collection.**
+The Framingham Heart Study participants, and their children and grandchildren, voluntarily consented to undergo a detailed medical history, physical examination, and medical tests every two years, creating a wealth of data about physical and mental health, especially about cardiovascular disease. All subjects were white.
+
+
+### Type of study 
+
+**What type of study is this (observational/experiment)?**
+prospective observational longitudinal study.
+
+
+### Data Source 
+
+**If you collected the data, state self-collected. If not, provide a citation/link.**
+www.kaggle.com
+
+
+
+### Dependent Variable
+
+**What is the response variable? Is it quantitative or qualitative?**
+BMI, the BMI was calculated by subject's weight(kg) and height(m).  It is a quatitative variable.
+BMI was calculated as the weight in kilograms divided by the square of the height in meters (kg/m2).
+
+### Independent Variable
+
+**You should have two independent variables, one quantitative and one qualitative.**
+The independat variables including sex( qualitative), age(quantitative), education (qualitative), smoking(qualitative), hypertension (qualitative), diabetes(qualitative), cholestrol(quantitative), coronary heart disease(qualitative)
+
+
+### Relevant summary statistics 
+
+**Provide summary statistics for each the variables. Also include appropriate visualizations related to your research question (e.g. scatter plot, boxplots, etc). This step requires the use of R, hence a code chunk is provided below. Insert more code chunks as needed.**
+Means will be calculated for all parameters in both men and women and in different age groups. The age group categories are: <30 years, 30 to 39 years, 40 to 49 years, 50 to 59 years, and ???60 years. The majority of the individuals in the <30 years category were between 20 and 29 years of age, and the majority of the individuals in the ???60 years category were between 60 and 69 years of age in both men and women. Subjects were also divided into 6 groups according to their BMI: <21.00, 21.00 to 22.99, 23.00 to 24.99, 25.00 to 27.49, 27.50 to 29.99, and ???30.00 kg/m2. These ranges are selected because they are similar to those selected in other large epidemiological studies of men and women.5927 To achieve normal distribution, a logarithmic transformation will be applied to BMI, total cholesterol in men and women. The PROC REG procedure will be used to test the association of BMI (as a continuous variable) with blood pressure, glucose, and plasma lipid levels after adjustment for age effects and exclusion of smokers. The odds ratios for each unit of BMI increase will be determined using PROC LOGIST, after the exclusion of smokers from the analysis to avoid residual effects of smoking.
+
+
+
+```{r}
+require(rvest)
+require(dplyr)
+require(stringr)
+require(tidyr)
+require(dplyr)
+require(ggplot2)
+```
+
+
+```{r}
+fhs <- read.csv("https://raw.githubusercontent.com/johnpannyc/data-606-final-project/aaa4460bec757f87321b826800b2017a48b3d437/framingham.csv")
+```
+
+```{r}
+dim(fhs)
+```
+
+```{r}
+head(fhs)
+```
+
+```{r}
+tail(fhs)
+```
+
+```{r}
+summary(fhs)
+```
+### Research question 
